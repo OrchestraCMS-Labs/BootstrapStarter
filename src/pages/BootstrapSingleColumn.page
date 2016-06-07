@@ -1,0 +1,68 @@
+<apex:page controller="cms.CoreController"  id="t" showHeader="false" sidebar="false" standardStylesheets="false" cache="false">
+    <apex:composition template="{!page_template_reference}">
+        <apex:define name="header">
+            <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+                rel="stylesheet" crossorigin="anonymous"
+                integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" />
+            <apex:outputText rendered="{!api.page_mode == 'edit'}">
+                <style>
+                    /* Bootstrap sets all elements to box-sizing:border-box; which breaks some OrchestraCMS controls */
+                    * {
+                        -webkit-box-sizing: content-box;
+                        -moz-box-sizing: content-box;
+                        box-sizing: content-box;
+                    }
+
+                    .pg * {
+                        -webkit-box-sizing: border-box;
+                        -moz-box-sizing: border-box;
+                        box-sizing: border-box;
+                    }
+                </style>
+            </apex:outputText>
+        </apex:define>
+
+        <apex:define name="body">
+            <div class="pg">
+                <header>
+                    <nav class="navbar navbar-default hidden">
+                        <div class="container">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".demo-navbar">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+
+                            <div class="collapse navbar-collapse">
+                                <apex:outputText rendered="{!api.page_mode == 'edit'}">
+                                    <div class="ocmsHint"><strong>Menu</strong> ❧ Class Styled Menu - Top Menu</div>
+                                </apex:outputText>
+                                <cms:Panel panelname="topMenu" panelcontroller="{!controller}"
+                                    panelwidth="300px" panelheight="100px" panelcontentlayouts="ClassStyledMenu" />
+                            </div>
+                        </div>
+                    </nav>
+                </header>
+
+                <main>
+                    <div class="container">
+                        <apex:outputText rendered="{!api.page_mode == 'edit'}">
+                            <div class="ocmsHint"><strong>General</strong> ❧ General Content Area</div>
+                        </apex:outputText>
+                        <cms:Panel panelname="mainContentFull2a" panelcontroller="{!controller}"
+                            panelwidth="100%" panelheight="325px" />
+                    </div>
+                </main>
+
+                <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+                    crossorigin="anonymous"
+                    integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS">
+                </script>
+                <script src="{!URLFOR($Resource.BootstrapHelpers, 'js/main.js')}"></script>
+            </div>
+        </apex:define>
+    </apex:composition>
+</apex:page>
