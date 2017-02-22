@@ -38,6 +38,11 @@ This content type requires a minimum of OrchestraCMS package 7.184 (Winter 2016,
 2. Deploy the following Visualforce pages to the target Salesforce organization
     1. BootstrapSingleColumn.page
 
+<a href="https://githubsfdeploy.herokuapp.com">
+  <img alt="Deploy to Salesforce"
+       src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
+</a>
+
 <a name="configuration"></a>
 ### Configuration
 
