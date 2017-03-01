@@ -30,4 +30,13 @@ window.STG.CTLib.BootstrapHelper = (function(global, namespace, undefined) {
 
         $container.removeClass('hidden');
     };
+
+    /**
+     * Fixes OCMS buttons in edit mode. Both jQueryUI (used by OrchestraCMS) and Bootstrap
+     * have a jQuery widget called 'button'. For the OrchestraCMS UI to function we need to
+     * set the Bootstrap buttons into noConflict mode.
+     *
+     * This should be executed immediately after bootstrap.js is included.
+     */
+    window.$.fn.bsButton = window.$.fn.button.noConflict();
 }(window, STG.CTLib.BootstrapHelper || {}));

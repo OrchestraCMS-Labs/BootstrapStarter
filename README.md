@@ -34,7 +34,8 @@ This content type requires a minimum of OrchestraCMS package 7.184 (Winter 2016,
 <a name="deployment"></a>
 ### Deployment
 
-1. Zip the contents of resource-bundles/BootstrapHelpers.resource and deploy the compressed file as BootstrapHelpers.resource
+1. Deploy the following static resources
+    1. BootstrapHelpers.resource
 2. Deploy the following Visualforce pages to the target Salesforce organization
     1. BootstrapSingleColumn.page
 

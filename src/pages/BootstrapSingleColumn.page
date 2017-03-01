@@ -5,29 +5,7 @@
                 rel="stylesheet" crossorigin="anonymous"
                 integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" />
             <apex:outputText rendered="{!api.page_mode == 'edit'}">
-                <style>
-                    /* Bootstrap sets all elements to box-sizing:border-box; which breaks some OrchestraCMS controls */
-                    .OCMS-Edit * {
-                        -webkit-box-sizing: content-box;
-                        -moz-box-sizing: content-box;
-                        box-sizing: content-box;
-                    }
-
-                    .OCMS-Edit .pg * {
-                        -webkit-box-sizing: border-box;
-                        -moz-box-sizing: border-box;
-                        box-sizing: border-box;
-                    }
-
-                    .OCMS-Edit .pg .ocms-content-panel,
-                    .OCMS-Edit .pg .ocms-content-panel *,
-                    .OCMS-Edit .pg .ocms-content-panel-item,
-                    .OCMS-Edit .pg .ocms-content-panel-item * {
-                        -webkit-box-sizing: content-box;
-                        -moz-box-sizing: content-box;
-                        box-sizing: content-box;
-                    }
-                </style>
+                <link rel="stylesheet" href="{!URLFOR($Resource.BootstrapHelpers, 'css/editor.css')}" />
             </apex:outputText>
         </apex:define>
 
